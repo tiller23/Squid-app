@@ -1,10 +1,13 @@
-const express = require('express');
+const Config = require('./config/development');
+const Routes = require('./routes')
+
+const express      = require('express');
 const cookieParser = require("cookie-parser");
-const sessions = require('express-session');
-const path = require("path");
-const http = require('http');
-var parseUrl = require('body-parser');
-const app = express();
+const sessions     = require('express-session');
+const path         = require("path");
+const http         = require('http');
+var parseUrl       = require('body-parser');
+const app          = express();
 
 var mysql = require('mysql');
 const { encode } = require('punycode');
@@ -12,28 +15,17 @@ const { encode } = require('punycode');
 let encodeUrl = parseUrl.urlencoded({ extended: false });
 
 //express session is created
-app.use(sessions({
-     secret: "thisismysecrctekey",
-     saveUninitialized:true,
-     cookie: { secure: true}, // 24 hours
-     resave: false 
-}));
-  app.use(cookieParser());
-  var con = mysql.createConnection({
-     host: "localhost",
-     user: "root", // my username
-     password: "password", // my password
-     database: "myform" 
-});
+app.use(sessions(Config.server));
+app.use(cookieParser());
+
+var con = mysql.createConnection(Config.mysql);
 con.connect(function(err) {
 	if(err){
 	  console.log(err);
 };
 app.use(express.static(path.join(__dirname,'./')));
 
-app.get('/app1', (req, res) => {
-	res.sendFile(path.join(__dirname + '/index.html'));
-})
+Routes(app);
 
 //destroying express session, Logout button
 app.get('/logout', function(req, res) {
