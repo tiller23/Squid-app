@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title> My Form </title>
+	<link rel="stylesheet" href="style.css"> 
+</head>
+<body align='center'>
+	<header> 
+		<h1>Login</h1>
+ 	</header>
+	<form action="/app1/login" method="POST">
+		<fieldset>
+			<label>User Name</label> 
+			<input type ="userName" id = 'userName' name="userName" placeholder="tyler" required>
+ 			<br><br>
+
+  			<label>Password</label> 
+			<input type="password" id = "password" name="password" required> 
+			<br><br>  
+
+			<button type ="reset">Reset</button>
+ 			<button type ="submit">Submit</button>
+		</fieldset>
+	</form>
+	<br><br>
+	<a id="mylink" href="./registration.html">Create Account</a>
+	<br><br>
+	<a id="mylink" href="./index.html">Back to Home Page</a>
+</body>
+</html>
