@@ -1,5 +1,3 @@
-const path = require('path');
-
 module.exports.logout = function(req, res){
     return req.session.destroy(function(err) {
         if(err) {
