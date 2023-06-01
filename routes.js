@@ -1,21 +1,15 @@
 const server = require('./Engines/server');
 const mysql  = require('./Engines/mysql');
+const {alive, home} = require('./controllers/main');
+const {logout} = require('./controllers/users');
 
 let encodeUrl = parseUrl.urlencoded({ extended: false });
 
-server.app.get('/alive', function(req, res){ return res.send('OK'); });
+server.app.get('/alive', alive);
 
-server.app.get('/app1', (req, res) => { res.sendFile(path.join(__dirname + '/index.html')); })
+server.app.get('/app1', home);
  
- server.app.get('/logout', function(req, res) {
-    req.session.destroy(function(err) {
-          if(err) {
-             console.log(err);
-        } else {
-            res.redirect('/app1/index.html');
-        }
-     });
-});
+ server.app.get('/logout', logout);
 
  server.app.post('/register', encodeUrl, (req, res) => {
         var email = req.body.email;
