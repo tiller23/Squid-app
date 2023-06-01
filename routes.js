@@ -1,25 +1,28 @@
-module.exports = function(app){
+const server = require('./Engines/server');
+const mysql  = require('./Engines/mysql');
 
-    app.get('/alive', function(req, res){ return res.send('OK'); });
+let encodeUrl = parseUrl.urlencoded({ extended: false });
 
-    app.get('/app1', (req, res) => { res.sendFile(path.join(__dirname + '/index.html')); })
+server.app.get('/alive', function(req, res){ return res.send('OK'); });
+
+server.app.get('/app1', (req, res) => { res.sendFile(path.join(__dirname + '/index.html')); })
  
-    app.get('/logout', function(req, res) {
-        req.session.destroy(function(err) {
-            if(err) {
-                console.log(err);
-            } else {
-                res.redirect('/app1/index.html');
-            }
-        });
-    });
+ server.app.get('/logout', function(req, res) {
+    req.session.destroy(function(err) {
+          if(err) {
+             console.log(err);
+        } else {
+            res.redirect('/app1/index.html');
+        }
+     });
+});
 
-    app.post('/register', encodeUrl, (req, res) => {
+ server.app.post('/register', encodeUrl, (req, res) => {
         var email = req.body.email;
         var userName = req.body.userName;
         var password = req.body.password;
    
-       con.query(`SELECT * FROM accounts WHERE username = '${userName}' AND password  = '${password}'`, function(err, result){
+       mysql.connection.query(`SELECT * FROM accounts WHERE username = '${userName}' AND password  = '${password}'`, function(err, result){
                 if(err){
                     console.log(err);
                 };
@@ -35,7 +38,7 @@ module.exports = function(app){
        }
        var sql = `INSERT INTO accounts (email, username, password) VALUES ('${email}', '${userName}', '${password}')`;
            
-                    con.query(sql, function (err, result) {
+                    mysql.connection.query(sql, function (err, result) {
                         if (err){
                             console.log(err);
                         }else{
@@ -47,16 +50,16 @@ module.exports = function(app){
              });
         });
       
-        app.post('/login', encodeUrl, (req, res) => {
-            var userName = req.body.userName;
-                var password = req.body.password;
+ server.app.post('/login', encodeUrl, (req, res) => {
+    var userName = req.body.userName;
+    var password = req.body.password;
         
-                 con.query(`SELECT * FROM accounts WHERE username = '${userName}' AND password = '${password}'`, function (err, result) {
-                   if(err){
-                     console.log(err);
-                   };
-                    function userPage(){
-                     // We create a session for the dashboard (user page) page and save the user data to this session:
+    mysql.connection.query(`SELECT * FROM accounts WHERE username = '${userName}' AND password = '${password}'`, function (err, result) {
+        if(err){
+             console.log(err);
+             };
+                function userPage(){
+                    // We create a session for the dashboard (user page) page and save the user data to this session:
                      req.session.user = {
                          email: email,
                          username: userName,
@@ -72,9 +75,9 @@ module.exports = function(app){
                   });
          });
 
-         app.post('/newsLetter', encodeUrl, (req, res) => {
+         server.app.post('/newsLetter', encodeUrl, (req, res) => {
             var email = req.body.email;
-            con.query(`SELECT * FROM news WHERE email = '${email}'`, function(err, result){
+            mysql.connection.query(`SELECT * FROM news WHERE email = '${email}'`, function(err, result){
                 if(err){
                     console.log(err);
                 };
@@ -84,7 +87,7 @@ module.exports = function(app){
                     res.sendFile(__dirname +'/newsRegistration.html');
                     }
                     var sql = `INSERT INTO news (email) VALUES ('${email}')`;
-                    con.query(sql, function (err, result) {
+                    mysql.connection.query(sql, function (err, result) {
                         if (err){
                             console.log(err);
                         }else{
@@ -93,6 +96,3 @@ module.exports = function(app){
                     });
                 });
             });     
-    
-    app.listen(3001, () =>{        console.log("Server running on port 3001");    });
-};
