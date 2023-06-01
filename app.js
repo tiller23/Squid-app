@@ -9,4 +9,5 @@ Server.init(Config.server);
 mysql.init(Config.mysql);
 
 
-require('./routes');
+const Routes = require('./routes');
+Routes(app);
