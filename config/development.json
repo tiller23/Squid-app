@@ -1,0 +1,16 @@
+{
+    "server" : {
+      "secret"            : "thisismysecrctekey",
+      "saveUninitialized" : true,
+      "cookie"            : { "secure" : true },
+      "resave"            : false 
+    },
+  
+   "mysql" : {
+      "host"     : "localhost",
+      "user"     : "root", 
+      "password" : "password", 
+      "database" : "myform" 
+   }
+  
+  }
