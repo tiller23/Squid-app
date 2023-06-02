@@ -17,6 +17,8 @@ Server.init = function(settings){
          message: 'incoming request',
          description: `${req.connection.remoteAddress} ${req.method} ${req.url}`
       });
+
+      return next();
    });
    Server.app.listen(3001, () =>{        console.log("Server running on port 3001");    });
 }

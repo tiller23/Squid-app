@@ -1,3 +1,4 @@
+const path = require('path');
 
 //The most simple controllers, bring the index page to life
 module.exports.alive = function(req, res){
@@ -5,5 +6,5 @@ module.exports.alive = function(req, res){
 };
 
 module.exports.home = function(req, res){
-    return res.sendFile('/index.html'); 
+    return res.sendFile(path.join(__dirname, '../', './index.html')); 
 };
