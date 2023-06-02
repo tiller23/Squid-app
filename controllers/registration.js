@@ -1,5 +1,5 @@
 //This is the file that controls all the registration for either the newsletter or the site itself
-const mysql = require('./Engines/mysql');
+const mysql = require('../Engines/mysql');
 
 module.exports.register = function(req, res){
     var email = req.body.email;
