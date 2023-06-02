@@ -16,6 +16,6 @@ server.app.get('/logout', logout);
 
 server.app.post('/app1/register', encodeUrl, register);
       
-server.app.post('/app1/login', encodeUrl, login);
+server.app.post('/app1/login.html', encodeUrl, login);
 
 server.app.post('/newsLetter', encodeUrl, newsReg);
