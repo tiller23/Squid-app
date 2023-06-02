@@ -12,7 +12,7 @@ let encodeUrl = parseUrl.urlencoded({ extended: false });
 //through different objects that pull from the controllers folder
 server.app.get('/alive', alive);
 
-server.app.get('/app1', home);
+server.app.get('/', home);
  
 server.app.get('/logout', logout);
 

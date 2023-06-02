@@ -12,6 +12,12 @@ Server.init = function(settings){
    Server.app.use(sessions(settings));
    Server.app.use(cookieParser());
    Server.app.use(express.static(path.join(__dirname,'./')));
+   Server.app.use(function(req, res, next){
+      console.log({
+         message: 'incoming request',
+         description: `${req.connection.remoteAddress} ${req.method} ${req.Url}`
+      });
+   });
    Server.app.listen(3001, () =>{        console.log("Server running on port 3001");    });
 }
 
