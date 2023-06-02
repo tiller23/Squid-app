@@ -14,8 +14,8 @@ server.app.get('/app1', home);
  
 server.app.get('/logout', logout);
 
-server.app.post('/register', encodeUrl, register);
+server.app.post('/app1/register', encodeUrl, register);
       
-server.app.post('/login', encodeUrl, login);
+server.app.post('/app1/login', encodeUrl, login);
 
 server.app.post('/newsLetter', encodeUrl, newsReg);
