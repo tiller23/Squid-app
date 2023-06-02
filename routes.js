@@ -8,6 +8,8 @@ const {register, newsReg} = require('./controllers/registration');
 
 let encodeUrl = parseUrl.urlencoded({ extended: false });
 
+//All of the routes to diffrent things, implement the controls set 
+//through different objects that pull from the controllers folder
 server.app.get('/alive', alive);
 
 server.app.get('/app1', home);

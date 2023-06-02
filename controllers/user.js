@@ -1,3 +1,4 @@
+//This file deals with the user sessions
 const mysql = require('./Engines/mysql');
 
 module.exports.logout = function(req, res){
@@ -10,6 +11,7 @@ module.exports.logout = function(req, res){
    });
 };
 
+//the login checks their credentials against the database and then logs them in
 module.exports.login = function(req, res){
     var userName = req.body.userName;
     var password = req.body.password;

@@ -1,3 +1,4 @@
+//This page allows the sql connection to be made once and then used properly across the rest of the files 
 let mysql = require('mysql');
 const MYSQLENGINE = {};
 

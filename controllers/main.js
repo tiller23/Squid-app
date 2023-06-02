@@ -1,5 +1,5 @@
 
-
+//The most simple controllers, bring the index page to life
 module.exports.alive = function(req, res){
     return res.send('OK'); 
 };
