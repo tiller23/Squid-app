@@ -10,6 +10,6 @@ const {register, newsReg} = require('./controllers/registration');
 server.app.get('/alive', alive);
 server.app.get('/', home);
 server.app.get('/logout', logout);
-server.app.post('/register', register);
+server.app.post('./register', register);
 server.app.post('/login', login);
 server.app.post('/newsLetter', newsReg);
