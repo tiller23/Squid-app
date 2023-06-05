@@ -2,7 +2,7 @@ let mysql = require('../Engines/mysql');
 const path = require('path');
 
 module.exports.register = async function(data){
-    //This allowsthe sql connection to make sure that the credentials inserted are not already in the system
+    //This allows the sql connection to make sure that the credentials inserted are not already in the system
     let result = await mysql.connection.query(`SELECT * FROM accounts WHERE username = '${data.userName}' AND password  = '${data.password}'`);
     if(Object.keys(result).length > 0){
         return path.join(__dirname, '../', './regFail.html');

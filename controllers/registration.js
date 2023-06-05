@@ -1,8 +1,10 @@
 //This is the file that controls all the registration for either the newsletter or the site itself
 const mysql = require('../Engines/mysql');
 const manager = require('../managers/registration');
+const path = require('path');
 
 module.exports.register = function(req, res){
+    res.sendFile(path.join(__dirname, '../', './registration.html'));
     manager.register({
         email: req.body.email,
         userName: req.body.userName,
@@ -22,7 +24,7 @@ module.exports.newsReg = function(req, res){
             console.log(err);
         };
         if(Object.keys(result).length > 0){
-            res.send("<div align ='center'><h2>Invalid email</h2></div><br><br><div align='center'><a href='./newsLetter.html'>Try Again<a><div>");
+            res.send(__dirname , '../', 'newsFail.html');
         }else{
             res.sendFile(__dirname , '../', '/newsRegistration.html');
             }
