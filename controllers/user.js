@@ -13,6 +13,7 @@ module.exports.logout = function(req, res){
 
 //the login checks their credentials against the database and then logs them in
 module.exports.login = function(req, res){
+    res.sendFile(path.join(__dirname, '../', '/login.html'));
     var userName = req.body.userName;
     var password = req.body.password;
 
