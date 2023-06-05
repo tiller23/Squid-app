@@ -1,5 +1,4 @@
 //This is the file that controls all the registration for either the newsletter or the site itself
-const mysql = require('../Engines/mysql');
 const manager = require('../managers/registration');
 
 module.exports.register = function(req, res){
