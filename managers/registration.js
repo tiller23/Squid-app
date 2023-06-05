@@ -1,4 +1,5 @@
 let mysql = require('../Engines/mysql');
+const path = require('path');
 
 module.exports.register = async function(data){
     //This allowsthe sql connection to make sure that the credentials inserted are not already in the system
