@@ -11,7 +11,7 @@ MYSQLENGINE.init = function(settings){
 
 MYSQLENGINE.onError = function(err){
     console.error(err);
-    process.exit(1);
+    //process.exit(1);
 };
 
 module.exports = MYSQLENGINE;
