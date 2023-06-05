@@ -33,7 +33,7 @@ body.regSucess{
 }
 body.regSucess{
 	font-size: 20px;
-	padding 10px:
+	padding: 10px;
 }
 body.newsletter{
 	 font-size: 20px;
@@ -50,10 +50,10 @@ body.newsletter{
 }
 
 body.loginSucess{
-	font-size 20px;
+	font-size: 20px;
 	border: 2px round black;
-	padding 5px;
-	margin 20px 30px;
+	padding: 5px;
+	margin: 20px 30px;
 }
 body.aboutMe{
 	font-size: 20px;

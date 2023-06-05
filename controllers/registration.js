@@ -24,7 +24,7 @@ module.exports.newsReg = function(req, res){
         if(Object.keys(result).length > 0){
             res.send("<div align ='center'><h2>Invalid email</h2></div><br><br><div align='center'><a href='./newsLetter.html'>Try Again<a><div>");
         }else{
-            res.sendFile(__dirname +'/newsRegistration.html');
+            res.sendFile(__dirname , '../', '/newsRegistration.html');
             }
     //This inserts the email into the database for storage
     var sql = `INSERT INTO news (email) VALUES ('${email}')`;
