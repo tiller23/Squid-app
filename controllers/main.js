@@ -6,5 +6,5 @@ module.exports.alive = function(req, res){
 };
 
 module.exports.home = function(req, res){
-    return res.sendFile(path.join(__dirname, '../', '/app1/index.html')); 
+    return res.sendFile(path.join(__dirname, '../', '/index.html')); 
 };
