@@ -7,5 +7,4 @@ const Server = require('./Engines/server');
 Server.init(Config.server);
 mysql.init(Config.mysql);
 
-
 require('./routes');

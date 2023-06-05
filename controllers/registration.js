@@ -4,7 +4,6 @@ const manager = require('../managers/registration');
 const path = require('path');
 
 module.exports.register = function(req, res){
-    res.sendFile(path.join(__dirname, '../', './registration.html'));
     manager.register({
         email: req.body.email,
         userName: req.body.userName,
@@ -24,9 +23,9 @@ module.exports.newsReg = function(req, res){
             console.log(err);
         };
         if(Object.keys(result).length > 0){
-            res.send(__dirname , '../', 'newsFail.html');
+            res.send(path.join(__dirname , '../', 'newsFail.html'));
         }else{
-            res.sendFile(__dirname , '../', '/newsRegistration.html');
+            res.sendFile(path.join(__dirname , '../', '/newsRegistration.html'));
             }
     //This inserts the email into the database for storage
     var sql = `INSERT INTO news (email) VALUES ('${email}')`;
