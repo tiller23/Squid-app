@@ -16,7 +16,6 @@ module.exports.register = function(req, res){
 };
 
 module.exports.newsReg = function(req, res){
-    res.sendFile(path.join(__dirname, '../', './newsLetter.html'));
     var email = req.body.email;
     //A much simpler sql connection, this only requires an email.
     mysql.connection.query(`SELECT * FROM news WHERE email = '${email}'`, function(err, result){
