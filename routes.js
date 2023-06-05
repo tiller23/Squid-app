@@ -11,6 +11,6 @@ const path = require('path');
 server.app.get('/alive', alive);
 server.app.get('/', home);
 server.app.get('/logout', logout);
-server.app.post(path.join('/register'), register);
+server.app.post(path.join(__dirname, '../','/register'), register);
 server.app.post('/login', login);
 server.app.post('/newsLetter', newsReg);
