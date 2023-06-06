@@ -18,7 +18,7 @@ module.exports.login = function(req, res){
         userName: req.body.userName,
         password: req.body.password
     }).then(function(success){
-        res.sendFile(success);
+        res.render(success);
     },function(err){
         res.status(400).send(err.message || err.stack || err.trace);
     });
