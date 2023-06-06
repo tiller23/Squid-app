@@ -7,7 +7,7 @@ module.exports.register = function(req, res){
         userName: req.body.userName,
         password: req.body.password
     }).then(function(success){
-        res.sendFile(__dirname, '../', '/register');
+        res.sendFile(success);
     },function(err){
         res.status(400).send(err.message || err.stack || err.trace);
     });
