@@ -11,7 +11,7 @@ Server.init = function(settings){
    Server.app = express();
    Server.app.use(sessions(settings));
    Server.app.use(cookieParser());
-   Server.app.use(express.static(path.join(__dirname,'./')));
+   Server.app.use(express.static(path.join(__dirname,'./projects')));
    Server.app.use(function(req, res, next){
       console.log({
          message: 'incoming request',
