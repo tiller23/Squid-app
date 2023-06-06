@@ -1,6 +1,4 @@
 const server = require('./Engines/server');
-const mysql  = require('./Engines/mysql');
-const http = require('http');
 const {alive, home} = require('./controllers/main');
 const {logout, login} = require('./controllers/user');
 const {register, newsReg} = require('./controllers/registration');
