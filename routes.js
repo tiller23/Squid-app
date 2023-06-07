@@ -13,6 +13,6 @@ server.app.get('/register', serve);
 server.app.get('/login', userSession);
 server.app.get('/newsLetter', newServe);
 
-server.app.post('/app1/register', register);
-server.app.post('/app1/login', login);
-server.app.post('/app1/newsLetter', newsReg);
+server.app.post('/register', register);
+server.app.post('/login', login);
+server.app.post('/newsLetter', newsReg);
