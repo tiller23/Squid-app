@@ -1,6 +1,7 @@
 //This is the file that controls all the registration for either the newsletter or the site itself
 const manager = require('../managers/registration');
 const path = require('path');
+const bodyParser = require('body-parser');
 
 module.exports.serve = function(req, res){
     return res.sendFile(path.join(__dirname, '../', './registration.html'));
