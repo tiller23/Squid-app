@@ -9,9 +9,9 @@ const path = require('path');
 server.app.get('/alive', alive);
 server.app.get('/', home);
 server.app.get('/logout', logout);
-server.app.get('/app1/register', serve);
-//server.app.get('/app1/login', userSession);
-//server.app.get('/app1/newsLetter', newServe);
+server.app.get('/register', serve);
+server.app.get('/app1/login', userSession);
+server.app.get('/app1/newsLetter', newServe);
 
 server.app.post('/app1/register', register);
 server.app.post('/app1/login', login);
