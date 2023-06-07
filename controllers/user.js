@@ -1,6 +1,7 @@
 //This file deals with the user sessions
 const mysql = require('../Engines/mysql');
 const manager = require('../managers/userData');
+const path = require('path');
 
 module.exports.logout = function(req, res){
     return req.session.destroy(function(err) {

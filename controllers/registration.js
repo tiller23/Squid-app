@@ -18,7 +18,7 @@ module.exports.register = function(req, res){
     });
 };
 
-module.exports.newServe = function(req,res){
+module.exports.newServe = function(req, res){
     return res.sendFile(path.join(__dirname, '../', './newsLetter.html'));
 };
 
