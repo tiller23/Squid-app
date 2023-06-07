@@ -12,6 +12,10 @@ module.exports.logout = function(req, res){
    });
 };
 
+module.exports.userSession = function(req, res){
+    return res.sendFile(path.join(__dirname, '../', './login.html'))
+};
+
 //the login checks their credentials against the database and then logs them in
 module.exports.login = function(req, res){
     manager.login({

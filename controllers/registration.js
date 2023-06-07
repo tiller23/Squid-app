@@ -18,6 +18,10 @@ module.exports.register = function(req, res){
     });
 };
 
+module.exports.newServe = function(req,res){
+    return res.sendFile(path.join(__dirname, '../', './newsLetter.html'));
+};
+
 module.exports.newsReg = function(req, res){
     manager.newsRegister({
         email: req.body.email
