@@ -2,7 +2,7 @@ let mysql = require('../Engines/mysql');
 const path = require('path');
 
 module.exports.login = async function(data){
-    let result = await mysql.connection.query(`SELECT * FROM accounts WHERE username = '${userName}' AND password = '${password}'`);
+    let result = await mysql.connection.query(`SELECT * FROM accounts WHERE username = '${data.userName}' AND password = '${data.password}'`);
     if(err){
         console.log(err)
     };
