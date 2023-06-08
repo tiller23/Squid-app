@@ -8,7 +8,7 @@ module.exports.logout = function(req, res){
         if(err) {
            console.log(err);
       } else {
-          res.redirect('/app1/index.html');
+          res.redirect('/app1');
       }
    });
 };
