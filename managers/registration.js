@@ -3,11 +3,11 @@ const path = require('path');
 
 module.exports.register = async function(data){
     //This allows the sql connection to make sure that the credentials inserted are not already in the system
-    let result = await mysql.connection.query(`SELECT * FROM accounts WHERE username = '${data.userName}' AND password  = '${data.password}'`, function(err, result){
+    let result = await mysql.connection.query(`SELECT * FROM accounts WHERE username = '${data.userName}' AND password  = '${data.password}'`, function(err){
     if (err){
         console.log(err);
     };
-    if($data.userName || $data.email){
+    if(Object.keys(result)){
         return path.join(__dirname, '../', './regFail.html');
     }
     });
