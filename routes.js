@@ -12,8 +12,8 @@ server.app.get('/register', serve);
 server.app.get('/login', userSession);
 server.app.get('/newsLetter', newServe);
 server.app.get('/shopping', shop);
-server.app.get('./contact', contacts);
-server.app.get('./aboutMe', about);
+server.app.get('/contact', contacts);
+server.app.get('/aboutMe', about);
 
 
 server.app.post('/register', register);
