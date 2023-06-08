@@ -7,7 +7,7 @@ module.exports.register = async function(data){
     if (err){
         console.log(err);
     };
-    if($userName || $email){
+    if($data.userName || $data.email){
         return path.join(__dirname, '../', './regFail.html');
     }
     });
