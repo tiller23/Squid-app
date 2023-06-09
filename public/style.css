@@ -75,7 +75,6 @@ figure{
 	padding     : 20px;
 }
 div.bottomLinks{
-	position    : fixed;
 	display     : inline-block;
 	padding     : 10px;
 	border      : 5px solid slategray;
@@ -88,4 +87,8 @@ div.bigLinks{
 	border      : 5px solid slategray;
 	margin-left : 20px;
 	margin-right: 20px;
+}
+a{
+	margin-left : 10px;
+	margin-right: 10px;
 }
