@@ -74,9 +74,8 @@ figure{
 	margin-right: auto;
 	padding     : 20px;
 }
-.bottomLinks{
+div.bottomLinks{
 	display   : inline-block;
-	position  : relative;
 	min-height: 100px;
 	border    : 2px round black;
 	margin    : 10px;
