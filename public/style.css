@@ -1,76 +1,84 @@
 * {
      background-color: #bcebe4;
-     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     font-family     : 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
  }
 #tylerDavis{
-    font-size: 50px;
-    margin: 100px 25px;
+    font-size   : 50px;
+    margin      : 100px 25px;
     border-style: double;
     border-width: 5px;
-    padding: 10px 15px 10px;
+    padding     : 10px 15px 10px;
 }
 body.registration{
-	font-size: 20px;
-   	margin: 20px;
+	font-size   : 20px;
+   	margin      : 20px;
    	border-width: 5px;
-   	padding: 10px;
+   	padding     : 10px;
    	border-style: solid;
 }
 body.login{
-	font-size: 20px;
-	margin: 20px;
+	font-size   : 20px;
+	margin      : 20px;
 	border-width: 5px;
-	padding: 10px;
+	padding     : 10px;
 	border-style: solid;
 }
 h1{
 	font-size: 40px;
-	margin: 10px;
+	margin   : 10px;
 }
 body.regSucess{
 	font-size:20px;
-	padding: 10px;
+	padding  : 10px;
 }
 body.regSucess{
 	font-size: 20px;
-	padding: 10px;
+	padding  : 10px;
 }
 body.newsletter{
-	 font-size: 20px;
-	 margin: 20px;
+	 font-size   : 20px;
+	 margin      : 20px;
 	 border-width: 5px;
-	 padding: 10px;
+	 padding     : 10px;
 	 border-style: solid;
  }
 #links{
 	font-size: 20px;
-	margin: 20px;
-	border: 3px solid black;
-	padding: 5px;
+	margin   : 20px;
+	border   : 3px solid black;
+	padding  : 5px;
 }
 
 body.loginSucess{
 	font-size: 20px;
-	border: 2px round black;
-	padding: 5px;
-	margin: 20px 30px;
+	border   : 2px round black;
+	padding  : 5px;
+	margin   : 20px 30px;
 }
 body.aboutMe{
 	font-size: 20px;
-	border: 3px round black;
-	padding: 5px;
-	margin: 10px;
+	border   : 3px round black;
+	padding  : 5px;
+	margin   : 10px;
 }
 head{
 	display:inline-block;
 }
 a.contact {
-	display: inline-block;
-       	text-align: right;
+	display   : inline-block;
+    text-align: right;
 }
 figure{
-	display: inline-block;
-	margin-left: auto;
+	display     : inline-block;
+	margin-left : auto;
 	margin-right: auto;
-	padding: 20px;
+	padding     : 20px;
+}
+.myDiv{
+	display   : inline-block;
+	position  : relative;
+	min-height: 100px;
+	border    : 2px round black;
+	margin    : 10px;
+	padding   : 10px;
 }
