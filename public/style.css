@@ -82,8 +82,9 @@ div.bottomLinks{
 	padding   : 10px;
 }
 footer{
-	display: inline-block;
-	padding: 20px;
-	border : 5px groove black;
-	margin : auto;
+	display     : inline-block;
+	padding     : 10px;
+	border      : 5px round rgb(97, 95, 95);
+	margin-left : 20px;
+	margin-right: 20px;
 }
