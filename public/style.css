@@ -69,6 +69,8 @@ a.contact {
        	text-align: right;
 }
 figure{
-	margin: 10px;
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
 	padding: 20px;
 }
