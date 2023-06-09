@@ -14,7 +14,7 @@ server.app.get('/newsLetter', newServe);
 server.app.get('/shopping', shop);
 server.app.get('/contact', contacts);
 server.app.get('/aboutMe', about);
-server.app.get('./loginSucess', success);
+server.app.get('/loginSucess', success);
 
 server.app.post('/register', register);
 server.app.post('/login', login);
