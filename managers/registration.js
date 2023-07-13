@@ -14,7 +14,6 @@ module.exports.register = async function(data){
     //After checking if the user is already in the system, inserts their credentials into the database
     await mysql.connection.query(`INSERT INTO accounts (email, username, password) VALUES ('${data.email}', '${data.userName}', '${data.password}')`);
     return path.join(__dirname, '../', './regSucess.html');
-
 };
 
 module.exports.newsRegister = async function(data){
