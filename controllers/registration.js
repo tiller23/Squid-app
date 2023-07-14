@@ -4,7 +4,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 
 module.exports.serve = function(req, res){
-    return res.sendFile(path.join(__dirname, '../', './registration.html'));
+    return res.render(path.join(__dirname, '../', './registration.html'));
 };
 
 module.exports.register = function(req, res){
@@ -20,7 +20,7 @@ module.exports.register = function(req, res){
 };
 
 module.exports.newServe = function(req, res){
-    return res.sendFile(path.join(__dirname, '../', './newsLetter.html'));
+    return res.render(path.join(__dirname, '../', './newsLetter.html'));
 };
 
 module.exports.newsReg = function(req, res){
