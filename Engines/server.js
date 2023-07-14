@@ -4,7 +4,6 @@ const cookieParser = require("cookie-parser");
 const sessions = require('express-session');
 const path = require('path');
 const bodyParser = require('body-parser');
-
 const Server = {};
 
 
@@ -22,6 +21,7 @@ Server.init = function(settings){
 
       return next();
    });
+   Server.app.set("view engine", "jade");
    Server.app.listen(3001, () =>{        console.log("Server running on port 3001");    });
 }
 

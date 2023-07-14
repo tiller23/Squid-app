@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports.success = function(req, res){
-    res.sendFile(path.join(__dirname, '../', './loginSucess.html'));
+    res.render(path.join(__dirname, '../', './loginSucess.html'));
 }
 
 module.exports.shop = function(req, res){
