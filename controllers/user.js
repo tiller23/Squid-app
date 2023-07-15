@@ -8,14 +8,21 @@ module.exports.logout = function(req, res){
         if(err) {
            console.log(err);
       } else {
-          res.redirect('/app1');
+          res.redirect('/');
       }
    });
 };
 
 module.exports.userSession = function(req, res){
-    return res.sendFile(path.join(__dirname, '../', './login.html'))
+    return res.render('login.html');
 };
+module.exports.loginSuccessful = function(req, res){
+    return res.render('loginSucess.html');
+};
+module.exports.loginFailure = function(req, res){
+    return res.render('loginfail.html');
+};
+
 
 //the login checks their credentials against the database and then logs them in
 module.exports.login = function(req, res){

@@ -21,8 +21,9 @@ Server.init = function(settings){
 
       return next();
    });
-   Server.app.set("view engine", "pug");
-   Server.app.set('views', path.join(__dirname, 'views'));
+   Server.app.engine('html', require('ejs').renderFile);
+   Server.app.set("view engine", "html");
+   Server.app.set('views', path.join(__dirname, '../views'));
    Server.app.listen(3001, () =>{        console.log("Server running on port 3001");    });
 }
 

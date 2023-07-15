@@ -4,7 +4,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 
 module.exports.serve = function(req, res){
-    return res.render(path.join(__dirname, '../', './registration.html'));
+    return res.render('registration.html');
 };
 
 module.exports.register = function(req, res){
@@ -19,8 +19,12 @@ module.exports.register = function(req, res){
     });
 };
 
-module.exports.newServe = function(req, res){
-    return res.render(path.join(__dirname, '../', './newsLetter.html'));
+module.exports.regSuccessful = function(req, res){
+    return res.render('regSucess.html');
+};
+
+module.exports.regFailure = function(req, res){
+    return res.render('regFail.html');
 };
 
 module.exports.newsReg = function(req, res){
@@ -31,6 +35,13 @@ module.exports.newsReg = function(req, res){
     },function(err){
         res.status(400).send(err.message || err.stack || err.trace);
     });
-
-
+};
+module.exports.newServe = function(req, res){
+    return res.render('newsLetter.html');
+};
+module.exports.newsSuccessful = function(req, res){
+    return res.render('newsRegistration.html');
+};
+module.exports.newsFailure = function(req, res){
+    return res.render('newsFail.html');
 };
