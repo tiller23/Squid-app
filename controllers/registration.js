@@ -12,19 +12,7 @@ module.exports.register = function(req, res){
         email: req.body.email,
         userName: req.body.userName,
         password: req.body.password
-    }).then(function(success){
-        res.sendFile(success);
-    },function(err){
-        res.status(400).send(err.message || err.stack || err.trace);
-    });
-};
-
-module.exports.regSuccessful = function(req, res){
-    return res.render('regSucess.html');
-};
-
-module.exports.regFailure = function(req, res){
-    return res.render('regFail.html');
+    }, req, res)
 };
 
 module.exports.newsReg = function(req, res){
@@ -45,3 +33,8 @@ module.exports.newsSuccessful = function(req, res){
 module.exports.newsFailure = function(req, res){
     return res.render('newsFail.html');
 };
+/*.then(function(success){
+        res.render(success);
+    },function(err){
+        res.status(400).send(err.message || err.stack || err.trace);
+    });*/
