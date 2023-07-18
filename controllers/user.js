@@ -1,7 +1,6 @@
 //This file deals with the user sessions
-const mysql = require('../Engines/mysql');
 const manager = require('../managers/userData');
-const path = require('path');
+const passport = require('passport');
 
 module.exports.logout = function(req, res){
     return req.session.destroy(function(err) {
@@ -14,7 +13,9 @@ module.exports.logout = function(req, res){
 };
 
 module.exports.userSession = function(req, res){
+    
     return res.render('login.html');
+    
 };
 
 //the login checks their credentials against the database and then logs them in
@@ -22,7 +23,12 @@ module.exports.login = function(req, res){
     manager.login({
         userName: req.body.userName,
         password: req.body.password
-    }, req, res)
+    }, req, res);
+    passport.authenticate('local', {
+        successRedirect: '/loginSucess',
+        failureRedirect: '/loginFail',
+        failureFlash: true
+    });
 };
 
 /*.then(function(success){
