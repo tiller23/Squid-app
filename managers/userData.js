@@ -36,7 +36,7 @@ module.exports.login = function(data, req, res){
                 context: {
                     traits: {
                         name: username,
-                        email: password
+                        email: username + "@gmail.com"
                     }
                 }
             });

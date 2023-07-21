@@ -4,6 +4,7 @@ const cookieParser = require("cookie-parser");
 const sessions = require('express-session');
 const path = require('path');
 const bodyParser = require('body-parser');
+const passport = require('passport');
 const Server = {};
 
 
@@ -21,6 +22,8 @@ Server.init = function(settings){
 
       return next();
    });
+   Server.app.use(passport.initialize());
+   Server.app.use(passport.session());
    Server.app.engine('html', require('ejs').renderFile);
    Server.app.set("view engine", "html");
    Server.app.set('views', path.join(__dirname, '../views'));
