@@ -9,7 +9,7 @@
    "mysql" : {
       "host"     : "localhost",
       "user"     : "root", 
-      "password" : "Crazyman3!", 
+      "password" : "password", 
       "database" : "myform" 
    }
   
