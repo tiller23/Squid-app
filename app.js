@@ -4,7 +4,7 @@ const mysql = require('./Engines/mysql');
 const Server = require('./Engines/server');
 
 //the configurations for the server
-//Server.init(Config.server);
-//mysql.init(Config.mysql);
+Server.init(Config.server);
+mysql.init(Config.mysql);
 
-//require('./routes');
+require('./routes');
