@@ -17,3 +17,7 @@ module.exports.contacts = function(req, res){
 module.exports.about = function(req, res){
     return res.render('aboutMe.html');
 };
+
+module.exports.me = function(req, res){
+    return res.json(req.user);
+  };

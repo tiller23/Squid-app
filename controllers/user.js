@@ -13,22 +13,16 @@ module.exports.logout = function(req, res){
 };
 
 module.exports.userSession = function(req, res){
-    
     return res.render('login.html');
-    
 };
 
 //the login checks their credentials against the database and then logs them in
-module.exports.login = function(req, res){
+module.exports.login = function(req, res, next){
     manager.login({
         userName: req.body.userName,
         password: req.body.password
     }, req, res);
-    passport.authenticate('local', {
-        successRedirect: '/loginSucess',
-        failureRedirect: '/loginFail',
-        failureFlash: true
-    });
+    next();
 };
 
 /*.then(function(success){
