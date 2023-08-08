@@ -4,20 +4,27 @@ let mysql = require('../Engines/mysql');
 const axios = require('axios');
 
 passport.serializeUser(function(user, done) {
-    done(null, user.id, user.username);
+    done(null, user.id);
+    console.log(user.id);
   });
 
 passport.deserializeUser(function(id, done) {
-    User.findById(id, function(err, user) {
-      done(err, user);
-    });
+  mysql.connection.query('SELECT * FROM accounts WHERE id = ?', [id], function(err, results) {
+    if (err) {
+      return done(err);
+    }
+    if (results.length === 0) {
+     return done(null, false);
+    }
+    return done(null, results[0]);
+  });
 });
+
 
 passport.use(new LocalStrategy({
     usernameField: 'userName',
     passwordField: 'password'
     }, function (username, password, done) {
-    console.log("running");
     const query = 'SELECT * FROM accounts WHERE username = ? AND password = ?';
     mysql.connection.query(query, [username, password], function(err, results) {
         if (err) { 
@@ -29,7 +36,7 @@ passport.use(new LocalStrategy({
             return done(null, false, { message: 'Incorrect username or password.' });
         }
         axios.post('https://app.mysquid.io/api/v1/track', {
-            project: "6480ea9e2cfb668a330b87a5",
+            project: "64d26009e12fd9e7aabce639",
             event: "identify",
             label: "recurring friend",
             context: {

@@ -19,11 +19,17 @@ server.app.get('/contact', contacts);
 server.app.get('/aboutMe', about);
 server.app.get('/loginSucess', success);
 server.app.get('/loginFail', failure);
-server.app.get('/me', me);
+server.app.get('/me', function(req, res){
+    console.log(req.user);
+    if(req.isAuthenticated())
+        res.send("welcome in");
+    else
+        res.send("you suck");
+});
 
 server.app.post('/register', register);
 server.app.post('/login', passport.authenticate('local', {
     successRedirect: '/loginSucess',
-    failureRedirect: '/login'
+    failureRedirect: '/loginFail'
 }));
 server.app.post('/newsLetter', newsReg);
