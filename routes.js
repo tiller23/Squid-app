@@ -19,13 +19,12 @@ server.app.get('/contact', contacts);
 server.app.get('/aboutMe', about);
 server.app.get('/loginSucess', success);
 server.app.get('/loginFail', failure);
-server.app.get('/me', function(req, res){
-    console.log(req.user);
-    if(req.isAuthenticated())
-        res.send("welcome in");
-    else
-        res.send("you suck");
-});
+server.app.get('/profile', function(req, res) {
+    console.log("Is authenticated?", req.isAuthenticated());
+    console.log("User:", req.user);
+    // Rest of your code
+    res.send("look at logs");
+  });
 
 server.app.post('/register', register);
 server.app.post('/login', passport.authenticate('local', {

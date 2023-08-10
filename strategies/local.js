@@ -8,8 +8,12 @@ passport.serializeUser(function(user, done) {
     console.log(user.id);
   });
 
-passport.deserializeUser(function(id, done) {
-  mysql.connection.query('SELECT * FROM accounts WHERE id = ?', [id], function(err, results) {
+
+  passport.deserializeUser(function(id, done) {
+    console.log('Deserializing user, ID:', id); // Log the ID
+    mysql.connection.query('SELECT * FROM accounts WHERE id = ?', [id], function(err, results) {
+      console.log('Query error:', err); // Log any error
+      console.log('Query results:', results); // Log the results {
     if (err) {
       return done(err);
     }
